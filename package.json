@@ -1,0 +1,11 @@
+{
+  "name": "kanban",
+  "version": "1.0.0",
+  "description": "sample kanban app from Survive.JS Webpack and React",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Ben Costolo",
+  "license": "ISC"
+}
