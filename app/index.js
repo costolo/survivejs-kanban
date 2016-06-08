@@ -1,4 +1,4 @@
-let component = require('./component');
-let app = document.createElement('div');
-document.body.appendChild(app);
+require('./main.css');
+var component = require('./component');
+var app = document.getElementById('container');
 app.appendChild(component());
