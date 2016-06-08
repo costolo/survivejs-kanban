@@ -1,0 +1,30 @@
+@import "~normalize.css/normalize.css";
+html, body, #app {
+	height: 100% !important;
+	width: 100% !important;
+}
+
+html {	
+	background: black;
+}
+
+#container {
+	background: white;
+	text-align: center;
+	width: 80%;
+	margin: 10% auto;
+	height: 10%;
+	position: relative;
+}
+
+#header {
+	font-family: "Avenir-Light";
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+
+
+
