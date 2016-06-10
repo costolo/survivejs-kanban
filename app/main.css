@@ -4,7 +4,7 @@ html, body, #app {
 	width: 100% !important;
 }
 
-html {	
+#app {	
 	background: black;
 }
 
@@ -12,12 +12,16 @@ html {
 	background: white;
 	text-align: center;
 	width: 80%;
-	margin: 10% auto;
+	margin: 0 auto;
 	height: 10%;
 	position: relative;
+	top: 10%;
 }
 
 #header {
+	margin: 0;
+	line-height: 10vh;
+	font-size: 5vh;
 	font-family: "Avenir-Light";
 	position: absolute;
 	top: 0;
