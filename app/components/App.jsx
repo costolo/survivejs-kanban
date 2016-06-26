@@ -10,17 +10,17 @@ export default class App extends React.Component {
 	}
 
 	componentDidMout() {
-		NoteStore.listen(this.storeChanged);
+		NoteStore.listen(this.storeChanged); 
 	}
 
 	componentWillUnmout() {
 		NoteStore.unlisten(this.storeChanged);
 	}
 
-	storeChanged = (state) => {
-		// set the context of this for strict mode
+	storeChanged = state => {
+		//set the context of this for strict mode
 		this.setState(state);
-	}
+	};
 
 	deleteNote(id, e) {
 		e.stopPropagation();
@@ -28,26 +28,29 @@ export default class App extends React.Component {
 	}
 
 	addNote() {
-		NoteActions.create({task: 'no'});
+		NoteActions.create({
+			task: 'no'
+		});
 	}
 
 	editNote(id, task) {
-		if(!task.trim()) {
+		if (!task.trim()) {
 			return;
 		}
-		NoteActions.update({id, task});
+		NoteActions.update({
+			id,
+			task
+		});
 	}
 
 	render() {
 		const notes = this.state.notes;
-		return(
-			<div className="container">
-				<button className="addButton" onClick={this.addNote}>+</button>
-				<Notes 
-					notes={notes} 
-					onEdit={this.editNote} 
-					onDelete={this.deleteNote}/>
-			</div>
+		return ( <div className = "container" >
+					<button className = "addButton" onClick = {this.addNote} > + < /button> 
+					<Notes notes = {notes}
+					onEdit = {this.editNote}
+					onDelete = {this.deleteNote}/> 
+				</div>
 		);
 	}
 }

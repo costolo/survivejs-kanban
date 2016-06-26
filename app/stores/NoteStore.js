@@ -33,7 +33,7 @@ class NoteStore {
 	}
 
 	delete(id) {
-		this.setState({
+		this.setState({	
 			notes: this.notes.filter(note => note.id !== id)
 		});
 	}
