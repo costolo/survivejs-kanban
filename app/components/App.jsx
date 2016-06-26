@@ -9,11 +9,11 @@ export default class App extends React.Component {
 		this.state = NoteStore.getState();
 	}
 
-	componentDidMout() {
+	componentDidMount() {
 		NoteStore.listen(this.storeChanged); 
 	}
 
-	componentWillUnmout() {
+	componentWillUnmount() {
 		NoteStore.unlisten(this.storeChanged);
 	}
 
