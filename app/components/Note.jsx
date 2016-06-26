@@ -1,2 +1,67 @@
 import React from 'react';
-export default () => <div id="container"><h1 id="header">webpack stuff</h1></div>	
+export default class Note extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			editing: false
+		};
+	}
+	render() {
+		if (this.state.editing) {
+			return this.renderEdit();
+		}
+		return this.renderNote();
+	}
+
+	renderEdit = () => {
+		return <input type="text"
+			ref={
+				(e) => e ? e.selectionStart = this.props.task.length : null
+			}
+			autoFocus={true}
+			defaultValue={this.props.task}
+			onBlur={this.finishEdit}
+			onKeyPress={this.checkEnter} />
+	};
+
+	edit = () => {
+		this.setState({
+			editing: true
+		});	
+	};
+
+	checkEnter = (e) => {
+		if (e.key === 'Enter') {
+			this.finishEdit(e);
+		}
+	};
+
+	finishEdit = (e) => {
+		const value = e.target.value;
+		if (this.props.onEdit) {
+			this.props.onEdit(value);
+		}
+
+		this.setState({
+			editing: false
+		});
+	};
+
+	renderDelete = () => {
+		return <button 
+			className="deleteButton" 
+			onClick={this.props.onDelete}>x</button>
+	};
+
+	renderNote = () => {
+		const onDelete = this.props.onDelete;
+
+		return (
+			<div onClick={this.edit}>
+				<span>{this.props.task}</span>
+				{onDelete ? this.renderDelete() : null}
+			</div>
+		);
+	};		
+}
