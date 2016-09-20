@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "alt": "^0.18.4",
+    "alt-utils": "^1.0.0",
     "babel-preset-survivejs-kanban": "^0.3.3",
     "node-uuid": "^1.4.7",
     "normalize.css": "^4.1.1",
