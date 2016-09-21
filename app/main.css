@@ -5,11 +5,11 @@ html, body, #app {
 }
 
 #app {	
-	background: black;
+	background: #7893a1;
 }
 
 .container {
-	background: white;
+	background: #e3e3e3;
 	text-align: center;
 	width: 80%;
 	margin: 0 auto;
@@ -47,6 +47,13 @@ ul {
 
 .note {
  	padding: 10px 0;
+}
+
+.note input {
+	outline: none;
+	background: #e3e3e3;
+	border: none;
+	margin: 0 auto;
 }
 
 .note:hover {
